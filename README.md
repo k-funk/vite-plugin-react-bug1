@@ -12,6 +12,8 @@ export { pluginForCjs as "module.exports" };
 
 This syntax was introduced in TypeScript 5.5, but this project uses TypeScript 5.3.3.
 
+**Important:** The error only occurs when `vite.config.ts` is included in the TypeScript compilation (via `tsconfig.json` include array). When TypeScript checks the config file, it also type-checks the imported plugin types, which triggers the incompatibility.
+
 ## Reproduce the Error
 
 1. Install dependencies:
